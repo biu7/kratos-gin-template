@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package server.v1;
+
+option go_package = "kratos-gin-template/api/server/v1;v1";
+
+enum DevicePlatform {
+  DevicePlatformUndefined = 0;
+  // 安卓
+  DevicePlatformAndroid = 1;
+  // IOS
+  DevicePlatformIOS = 2;
+  // Web 端
+  DevicePlatformWeb = 3;
+  // 微信内 Web
+  DevicePlatformWechatWeb = 4;
+  // 微信小程序
+  DevicePlatformWechatMiniApp = 5;
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+package kratos.api;
+
+option go_package = "kratos-gin-template/app/server/internal/conf;conf";
+
+import "google/protobuf/duration.proto";
+
+message Bootstrap {
+  Server server = 1;
+  Data data = 2;
+  Biz biz = 3;
+}
+
+message Server {
+  message HTTP {
+    string network = 1;
+    string addr = 2;
+    google.protobuf.Duration timeout = 3;
+  }
+  HTTP http = 1;
+}
+
+message Data {
+  message MySQL {
+    string link = 1;
+    int32 max_idle_conn = 2;
+    int32 max_open_conn = 3;
+  }
+  message Redis {
+    string link = 1;
+  }
+  message Typesense {
+    string server = 1;
+    string key = 2;
+  }
+  MySQL mysql = 1;
+  Redis redis = 2;
+  Typesense typesense = 3;
+}
+
+message Biz {
+  Secret secret = 1;
+}
+
+message Secret {
+  string jwt_secret = 1;
+  string private_image_key = 2;
+}

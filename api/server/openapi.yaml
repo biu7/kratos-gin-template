@@ -1,0 +1,10 @@
+# Generated with protoc-gen-openapi
+# github.com/biu7/protoc-gen-openapi/tree/master
+
+openapi: 3.0.3
+info:
+    title: ""
+    version: 0.0.1
+paths: {}
+components:
+    schemas: {}
